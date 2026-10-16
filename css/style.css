@@ -1,0 +1,24 @@
+/*
+===========================================================
+DECLARATIONS DES VARIABLES CSS
+===========================================================
+*/
+:root{
+    --main-color: #E9A23B;
+    --second-color: #1F4D3A;
+    --third-color: #C2562B;
+    --gold-color: #E9A23B;
+    --white-color: #FFFFFF;
+    --success-color: darkgreen;
+    --warning-color: darkorange;
+    --danger-color: darkred;
+    --slide-bg-color: rgba(0, 0, 0, 0.45);
+    --main-font: "Sgoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    --title-font: forte, arial, sans-serif;
+    --font-size: 12pt;
+}
+/*
+===========================================================
+DESIGN GLOBAL SU SITE
+===========================================================
+*/
