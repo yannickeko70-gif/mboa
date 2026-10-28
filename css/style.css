@@ -90,7 +90,6 @@ a, a:visited{
 =========================
 DESIGN ENTETE
 =========================
-
 */
 #entete{
     position: fixed;
@@ -109,7 +108,6 @@ DESIGN ENTETE
     align-items: center;
     width: 100%;
     height: auto;
-
 }
 #logo a{
     font-size: 20pt;
@@ -187,9 +185,12 @@ DESIGN CARROUSEL
     transition: all 0.5s ease-in-out;
 }
 #carrousel .slide_options{
-    margin-top: 40px;
-    bottom: 20px;
+    position: absolute; 
+    bottom: 40px;       
+    left: 8%;           
     z-index: 200;
+    display: flex;      
+    gap: 10px;          
 }
 #carrousel .slide_options span{
     /* On transforme le span en conteneur flex */

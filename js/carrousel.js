@@ -6,16 +6,16 @@ DECLARATION DES DONNEES
 */
 const datas_slides= [
     {
-        titre :"Le goût du pays, livré chez vous.",
-        description : "Epices, cafés, miel, piment."
+        titre :"Le goût du pays, livré chez vous dans une atmosphère idéal.",
+        description : "Epices, cafés, miel, piment, poivre noir."
     },
     {
         titre :"Le café des plus hauts plateaux",
-        description : "Epices, cafés, miel, sucre."
+        description : "Le meilleur de toute sa génération avec un taux de caféine adapter à un expérience conviviale et parfaite."
     },
     {
-        titre :"Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        description : "Quibusdam consectetur doloremque magnam laboriosam corrupti aut"
+        titre :"Le meilleur market de toute la région, pour vous !",
+        description : "Sur plusieurs kilomètre, vous ne trouverez pas meilleur que nous, sa je vous l'assure."
     }
 ]
 
@@ -56,8 +56,64 @@ DECLARATION DES VARIABLES
 =========================
 */
 const slide = document.querySelectorAll("#carrousel .slide");
-const slide_left = document.querySelector("#carrousel .slide-left");
+const slide_left  = document.querySelector("#carrousel .slide_left");
 const slide_right = document.querySelector("#carrousel .slide_right");
 
 //Contient l'indice du slide actuellement affiché.
 let slide_courant = 0;
+
+/*
+=========================
+MASQUER TOUS LES SLIDES SAUF LE PREMIER
+=========================
+*/
+for(let i = 1; i < slide.length; i++){
+    slide[i].classList.add('hide');
+}
+
+/*
+=========================
+QUELQUES FONCTIONS UTILES
+=========================
+*/
+//Fonction permettant d'afficher un slide en fonction de son indice.
+function showSlide(index, direction){
+    //On masque le slide actuellement affiché (courant).
+    slide[slide_courant].classList.add('hide');
+
+    //On cherche l'indice du nouveau slide à afficher en fonction de la direction (gauche ou droite).
+    //trim permet de supprimer les espaces au début et à la fin de la chaîne de caractères.
+    //toLowerCase permet de convertir la chaîne de caractères en minuscules.
+    if(direction.trim().toLowerCase() == 'right'){
+        if(index >= slide.length ){
+            slide_courant = 0;
+        }
+        else{
+            slide_courant = index;
+        }
+    }
+    else if(direction.trim().toLowerCase() == 'left'){
+        if(index < 0){
+            slide_courant = slide.length - 1;
+        }
+        else{
+            slide_courant = index;
+        }
+    }
+
+    //On affiche le slide courant.
+    slide[slide_courant].classList.remove('hide');
+}
+
+/*
+=========================
+ON LANCE LE SLIDE
+=========================
+*/
+slide_left.addEventListener("click", function(e){
+    showSlide(slide_courant - 1, 'left');
+});
+
+slide_right.addEventListener("click", function(e){
+    showSlide(slide_courant + 1, 'right');
+});
