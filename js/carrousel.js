@@ -117,3 +117,13 @@ slide_left.addEventListener("click", function(e){
 slide_right.addEventListener("click", function(e){
     showSlide(slide_courant + 1, 'right');
 });
+
+/*
+=========================
+LANCER LE SLIDE AUTOMATIQUEMENT
+=========================
+*/
+//Le slide défile automatiquement vers la droite toutes les 5 secondes.
+setInterval(function (){    // On utilise la fonction setInterval pour exécuter la fonction showSlide toutes les 5 secondes (5000 millisecondes).
+    showSlide(slide_courant + 1, 'right');
+}, 5000); // 5000 millisecondes = 5 secondes
